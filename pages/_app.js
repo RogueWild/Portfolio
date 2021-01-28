@@ -5,3 +5,7 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp
+
+// CUSTOM STYLES //
+
+import '../styles/home.scss'
