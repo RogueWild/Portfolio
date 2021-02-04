@@ -8,4 +8,5 @@ export default MyApp
 
 // CUSTOM STYLES //
 
+import '../styles/app.scss'
 import '../styles/home.scss'
