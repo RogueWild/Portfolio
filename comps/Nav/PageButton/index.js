@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 
-const ButtonCont = styled.button`
+const ButtonCont = styled.p`
 
 `;
 
-const Button = ({ }) => {
+const PageButton = ({ }) => {
     return <ButtonCont>
 
     </ButtonCont>
 }
 
-Button.defaultProps = {
+PageButton.defaultProps = {
 
 }
 
-export default Button;
+export default PageButton;
