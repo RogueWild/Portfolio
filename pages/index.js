@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-import Home from './home';
+import HomePage from './home';
+import ContactPage from './contact';
 
 export default function Portfolio({ }) {
 
-  const [homeWeight, setHomeWeight] = useState("normal");
+  const [homeWeight, setHomeWeight] = useState("bold");
   const [aboutWeight, setAboutWeight] = useState("normal");
   const [worksWeight, setWorksWeight] = useState("normal");
 
@@ -27,19 +28,27 @@ export default function Portfolio({ }) {
   }
 
   useEffect(() => {
-    //HandleHome();
+
   });
 
   return (
     <div>
-      <Home
+
+      <HomePage
+        // Clicking Page buttons
         HomeClicked={HandleHome}
         AboutClicked={HandleAbout}
         WorksClicked={HandleWorks}
+        // Page button font weight
         homeFontWeight={homeWeight}
         aboutFontWeight={aboutWeight}
         worksFontWeight={worksWeight}
       />
+
+      <ContactPage
+
+      />
+
     </div>
   )
 }
