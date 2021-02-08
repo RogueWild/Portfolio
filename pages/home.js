@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Nav from '../comps/Nav';
 
-export default function Home({ HomeClicked, AboutClicked, WorksClicked, homeFontWeight, aboutFontWeight, worksFontWeight }) {
+export default function HomePage({ HomeClicked, AboutClicked, WorksClicked, homeFontWeight, aboutFontWeight, worksFontWeight }) {
     return (
         <div className="homePageMain">
             <div className="homePage">
