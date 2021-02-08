@@ -27,15 +27,17 @@ export default function Portfolio({ }) {
   }
 
   useEffect(() => {
-    //HandleHome();
+    HandleHome();
   });
 
   return (
     <div>
       <Home
+        // Clicking Page buttons
         HomeClicked={HandleHome}
         AboutClicked={HandleAbout}
         WorksClicked={HandleWorks}
+        // Page button font weight
         homeFontWeight={homeWeight}
         aboutFontWeight={aboutWeight}
         worksFontWeight={worksWeight}

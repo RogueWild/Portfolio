@@ -27,7 +27,6 @@ const Button = styled.p`
 const ContactButtonCont = styled.p`
     color:${props => props.color ? "white" : "black"};
     background:${props => props.bg ? "none" : "#F3F3F3"};
-    //padding:5px 9px;
     display:flex;
     justify-content:space-evenly;
     align-items:center;
