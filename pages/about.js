@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import SkillBox from '../comps/SkillBox';
 
 import Image from 'next/image';
 
@@ -23,9 +24,9 @@ export default function AboutPage({ }) {
                 <div className="skills">
                     <div className="skillsText">
                         <h1 style={{ fontWeight: "normal", fontSize: "36px", color: "white" }}>My Skills</h1>
-                        <p style={{ fontWeight: "300", fontSize: "18px", color: "white" }}>
-                            <br /><br />My skillset combines both Design, Front-end Development, and artistic experience. Design a User Interface? Sure. Implement it into usable components? No problem. Make a professional photo manipulation? With pleasure!</p>
+                        <p style={{ fontWeight: "300", fontSize: "18px", color: "white" }}>My skillset combines both Design, Front-end Development, and artistic experience. Design a User Interface? Sure. Implement it into usable components? No problem. Make a professional photo manipulation? With pleasure!</p>
                     </div>
+                    <SkillBox />
                 </div>
             </div>
         </div>
