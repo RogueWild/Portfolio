@@ -19,7 +19,7 @@ const ContactCont = styled.div`
 const InfoCont = styled.div`
     width: 50%;
     height: 450px;
-    margin-left:50px;
+    margin-left:40px;
     display:flex;
     flex-direction:column;
 `;
@@ -38,6 +38,7 @@ const SocialContacts = styled.div`
     display:flex;
     align-items:center;
     margin-bottom:20px;
+
 `;
 
 const Icon = styled.div`
@@ -51,11 +52,78 @@ const Icon = styled.div`
 
 const SocialCont = styled.div`
     position:absolute;
+    width:40%;
     bottom:40px;
-    left:20px;
+    left:-35px;
 `;
 
-const Contact = ({ }) => {
+const ContactField = styled.div`
+    position:relative;
+    min-width:400px;
+    min-height:460px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    margin-left:45px;
+    display:flex;
+    flex-direction:column;
+`;
+
+const InputCont = styled.div`
+    display:flex;
+    flex-direction:column;
+    min-width:20%;
+    min-height:10%;
+    padding:30px 30px 0px 30px;
+`;
+const Input = styled.input`
+    background: #FFFFFF;
+    min-width:340px;
+    min-height:45px;
+    border: 2px solid #E1E1E9;
+    border-radius: 5px;
+`;
+const MessageCont = styled.textarea`
+    background: #F3F3F3;
+    min-width:340px;
+    min-height:100px;
+    max-width:400px;
+    max-height:120px;
+    border: none;
+    border-radius: 5px;
+    resize:none;
+`;
+const Label = styled.label`
+    color:black;
+    margin-bottom:10px;
+`;
+const Submit = styled.button`
+    position:relative;
+    align-self:flex-end;
+    margin-top:20px;
+    width:100px;
+    height:40px;
+    background:#0C75FF;
+    border-radius: 5px;
+    border: none;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+
+    &:hover {
+        border: 2px solid blue;
+    }
+    transition: 0.1s;
+`;
+
+const Contact = ({ onFormSubmit }) => {
+
+    const [name, setName] = useState(null);
+    const [email, setEmail] = useState(null);
+    const [message, setMessage] = useState(null);
+
     return <ContactCont>
         <InfoCont>
             <Text size="36px" weight="regular" margin="0px 0px 10px 0px">Have questions?</Text>
@@ -75,11 +143,26 @@ const Contact = ({ }) => {
                 />
             </SocialCont>
         </InfoCont>
+        <ContactField>
+            <InputCont>
+                <Label>Your Name</Label>
+                <Input onChange={(e) => {setName(e.target.value)}} />
+            </InputCont>
+            <InputCont>
+                <Label>Your Email</Label>
+                <Input onChange={(e) => {setEmail(e.target.value)}} />
+            </InputCont>
+            <InputCont>
+                <Label>Your Message</Label>
+                <MessageCont onChange={(e) => {setMessage(e.target.value)}} />
+                <Submit onClick={() => {onFormSubmit(name, email, message)}}>Submit</Submit>
+            </InputCont>
+        </ContactField>
     </ContactCont>
 }
 
 Contact.defaultProps = {
-
+    onFormSubmit: () => {}
 }
 
 export default Contact;

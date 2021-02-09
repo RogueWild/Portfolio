@@ -18,7 +18,7 @@ const FlexCont = styled.div`
     flex:${props => props.flex ? props.flex : ""};
 `;
 
-const Nav = ({ HomeClicked, AboutClicked, WorksClicked, ContactClicked, homeFontWeight, aboutFontWeight, worksFontWeight }) => {
+const Nav = ({ cColor, cBg, HomeClicked, AboutClicked, WorksClicked, ContactClicked, homeFontWeight, aboutFontWeight, worksFontWeight }) => {
     return <Container>
         <FlexCont flex="5">
             <Logo />
@@ -31,6 +31,7 @@ const Nav = ({ HomeClicked, AboutClicked, WorksClicked, ContactClicked, homeFont
             homeFontWeight={homeFontWeight}
             aboutFontWeight={aboutFontWeight}
             worksFontWeight={worksFontWeight}
+            cColor={cColor} cBg={cBg}
         />
         <FlexCont flex="5">
             <Social />
