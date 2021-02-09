@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Nav from '../comps/Nav';
 
-export default function HomePage({ HomeClicked, AboutClicked, WorksClicked, homeFontWeight, aboutFontWeight, worksFontWeight }) {
+export default function HomePage({ cColor, cBg, HomeClicked, AboutClicked, WorksClicked, ContactClicked, homeFontWeight, aboutFontWeight, worksFontWeight }) {
     return (
         <div className="homePageMain">
             <div className="homePage">
@@ -11,9 +11,11 @@ export default function HomePage({ HomeClicked, AboutClicked, WorksClicked, home
                         HomeClicked={HomeClicked}
                         AboutClicked={AboutClicked}
                         WorksClicked={WorksClicked}
+                        ContactClicked={ContactClicked}
                         homeFontWeight={homeFontWeight}
                         aboutFontWeight={aboutFontWeight}
                         worksFontWeight={worksFontWeight}
+                        cColor={cColor} cBg={cBg}
                     />
                 </div>
                 <div className="mainBox">

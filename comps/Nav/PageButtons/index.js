@@ -37,6 +37,8 @@ const ContactButtonCont = styled.p`
     box-sizing: border-box;
     cursor:pointer;
 
+    border:2px solid #FFFFFF;
+
     &:hover {
         background:none;
         border: 2px solid #FFFFFF;
@@ -58,23 +60,23 @@ const PageButton = ({ onClick, text, fontWeight }) => {
     </motion.div>
 }
 
-const ContactButton = ({ }) => {
+const ContactButton = ({ onClick, cColor, cBg }) => {
     return <motion.div
         whileTap={{ scale: 0.95 }}
         transition={{ duration: 0.1, ease: "easeOut" }}
     >
-        <ContactButtonCont>
+        <ContactButtonCont onClick={onClick} color={cColor} bg={cBg}>
             Contact
         </ContactButtonCont>
     </motion.div>
 }
 
-const PageButtons = ({ HomeClicked, AboutClicked, WorksClicked, ContactClicked, homeFontWeight, aboutFontWeight, worksFontWeight }) => {
+const PageButtons = ({ cColor, cBg, HomeClicked, AboutClicked, WorksClicked, ContactClicked, homeFontWeight, aboutFontWeight, worksFontWeight }) => {
     return <ButtonCont>
         <PageButton onClick={HomeClicked} fontWeight={homeFontWeight} text="Home"></PageButton>
         <PageButton onClick={AboutClicked} fontWeight={aboutFontWeight} text="About"></PageButton>
         <PageButton onClick={WorksClicked} fontWeight={worksFontWeight} text="Works"></PageButton>
-        <ContactButton onClick={ContactClicked}>Contact</ContactButton>
+        <ContactButton onClick={ContactClicked} cColor={cColor} cBg={cBg}>Contact</ContactButton>
     </ButtonCont>
 }
 
