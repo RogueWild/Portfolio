@@ -14,15 +14,15 @@ const LogoText = styled.p`
     cursor:pointer;
 `;
 
-const Logo = ({  }) => {
-    return <LogoCont>
+const Logo = ({ onLogoClick }) => {
+    return <LogoCont onClick={onLogoClick}>
         <LogoText fontWeight="bold">Mike</LogoText>
         <LogoText marL="5px" fontWeight="300">Uderevskyi</LogoText>
     </LogoCont>
 }
 
 Logo.defaultProps = {
-
+    onLogoClick: () => { }
 }
 
 export default Logo;

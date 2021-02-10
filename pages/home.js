@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 
 import Nav from '../comps/Nav';
 
-export default function HomePage({ cColor, cBg, HomeClicked, AboutClicked, WorksClicked, ContactClicked, homeFontWeight, aboutFontWeight, worksFontWeight }) {
+export default function HomePage({ onLogoClick, cColor, cBg, HomeClicked, AboutClicked, WorksClicked, ContactClicked, homeFontWeight, aboutFontWeight, worksFontWeight }) {
     return (
         <div className="homePageMain">
             <div className="homePage">
                 <div className="nav">
                     <Nav
+                        onLogoClick={onLogoClick}
                         HomeClicked={HomeClicked}
                         AboutClicked={AboutClicked}
                         WorksClicked={WorksClicked}

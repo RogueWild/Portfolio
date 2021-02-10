@@ -10,6 +10,7 @@ const Container = styled.div`
     height:50px;
     display:flex;
     align-items:center;
+    background:#1B1D23;
 
     //border:1px red solid;
 `;
@@ -18,10 +19,10 @@ const FlexCont = styled.div`
     flex:${props => props.flex ? props.flex : ""};
 `;
 
-const Nav = ({ cColor, cBg, HomeClicked, AboutClicked, WorksClicked, ContactClicked, homeFontWeight, aboutFontWeight, worksFontWeight }) => {
+const Nav = ({ onLogoClick, cColor, cBg, HomeClicked, AboutClicked, WorksClicked, ContactClicked, homeFontWeight, aboutFontWeight, worksFontWeight }) => {
     return <Container>
         <FlexCont flex="5">
-            <Logo />
+            <Logo onLogoClick={onLogoClick} />
         </FlexCont>
         <PageButtons
             HomeClicked={HomeClicked}
