@@ -6,14 +6,17 @@ const SkillCont = styled.div`
     padding:0px 20px;
     border-radius:6px;
     background:#324556;
+    border: 3px solid #1B1D23;
     font-family: Source Code Pro;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 14px;
+    color:white;
     display: flex;
     align-items: center;
     text-align: center;
-    margin-left:70px;
+    margin-right:15px;
+    white-space: nowrap;
 `;
 
 const SkillBox = ({ text }) => {

@@ -118,6 +118,7 @@ export default function Portfolio({ }) {
     <div>
       <div ref={home}>
         <HomePage
+          onLogoClick={HandleHome}
           // Clicking Page buttons
           HomeClicked={HandleHome}
           AboutClicked={HandleAbout}
