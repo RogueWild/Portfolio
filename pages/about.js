@@ -33,7 +33,6 @@ export default function AboutPage({ }) {
                         <h1 style={{ fontWeight: "normal", fontSize: "36px", color: "white" }}>My Skills</h1>
                         <p style={{ fontWeight: "300", fontSize: "18px", color: "white" }}>My skillset combines both Design, Front-end Development, and artistic experience. Design a User Interface? Sure. Implement it into usable components? No problem. Make a professional photo manipulation? With pleasure!</p>
                     </div>
-
                 </div>
                 <div className="skills">
                     <div className="aboutText">
