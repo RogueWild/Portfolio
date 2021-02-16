@@ -11,11 +11,11 @@ const TextBox = styled.div`
     height:${props => props.height ? props.height : ""};
     margin:${props => props.margin ? props.margin : ""};
     border-radius:5px;
-    white-space: nowrap;
+    white-space:${props => props.whiteSpace ? props.whiteSpace : "nowrap"} ;
 `;
 
-const Text = ({ text, color, size, weight, family, bg, width, height, margin }) => {
-    return <TextBox color={color} size={size} weight={weight} family={family} bg={bg} width={width} height={height} margin={margin}>
+const Text = ({ text, color, size, weight, family, bg, width, height, margin, whiteSpace }) => {
+    return <TextBox color={color} size={size} weight={weight} family={family} bg={bg} width={width} height={height} margin={margin} whiteSpace={whiteSpace}>
         {text}
     </TextBox>
 }

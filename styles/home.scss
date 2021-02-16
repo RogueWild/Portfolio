@@ -7,13 +7,12 @@
         width: 1366px;
         height: 100vh;
         display: flex;
-        align-items: center;
 
         .nav {
             position: fixed;
             min-width: 100%;
             align-self: flex-start;
-            z-index:1;
+            z-index: 1;
         }
 
         .text {
@@ -22,7 +21,7 @@
             margin-left: 15px;
             margin-top: 40px;
             width: 20%;
-            display:flex;
+            display: flex;
             flex-direction: column;
 
             //border: 1px solid red;
@@ -39,8 +38,12 @@
             .cards {
                 display: flex;
                 flex-direction: column;
-                max-width: 50%;
                 margin: 70px;
+            }
+
+            .desc {
+                width: 40%;
+                height: 70%;
             }
         }
     }

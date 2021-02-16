@@ -2,7 +2,14 @@ import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import Social from '../Social';
 
-const ContactCont = styled.div`
+const Container = styled.div`
+    display:flex;
+    align-items:center;
+    justify-content:center;
+`;
+
+const Background = styled.div`
+    position: absolute;
     min-width: 1060px;
     min-height: 535px;
     background: #181826;
@@ -11,7 +18,15 @@ const ContactCont = styled.div`
     backdrop-filter: blur(17px);
     border-radius: 20px;
     border: 3px rgba(95, 236, 255, 0.2) solid;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+`;
 
+const ContactCont = styled.div`
+    position: absolute;
+    min-width: 1060px;
+    min-height: 535px;
     display:flex;
     align-items:center;
 `;
@@ -38,7 +53,6 @@ const SocialContacts = styled.div`
     display:flex;
     align-items:center;
     margin-bottom:20px;
-
 `;
 
 const Icon = styled.div`
@@ -51,10 +65,10 @@ const Icon = styled.div`
 `;
 
 const SocialCont = styled.div`
-    position:absolute;
-    width:40%;
-    bottom:40px;
-    left:-35px;
+    position:relative;
+    width:80%;
+    top:80px;
+    left:-70px;
 `;
 
 const ContactField = styled.div`
@@ -120,6 +134,16 @@ const Submit = styled.button`
 
 const Contact = ({ onFormSubmit }) => {
 
+    return <Container>
+        <Background />
+        <Main
+            onFormSubmit={onFormSubmit}
+        />
+    </Container>
+}
+
+const Main = ({ onFormSubmit }) => {
+
     const [name, setName] = useState(null);
     const [email, setEmail] = useState(null);
     const [message, setMessage] = useState(null);
@@ -146,23 +170,23 @@ const Contact = ({ onFormSubmit }) => {
         <ContactField>
             <InputCont>
                 <Label>Your Name</Label>
-                <Input onChange={(e) => {setName(e.target.value)}} />
+                <Input onChange={(e) => { setName(e.target.value) }} />
             </InputCont>
             <InputCont>
                 <Label>Your Email</Label>
-                <Input onChange={(e) => {setEmail(e.target.value)}} />
+                <Input onChange={(e) => { setEmail(e.target.value) }} />
             </InputCont>
             <InputCont>
                 <Label>Your Message</Label>
-                <MessageCont onChange={(e) => {setMessage(e.target.value)}} />
-                <Submit onClick={() => {onFormSubmit(name, email, message)}}>Submit</Submit>
+                <MessageCont onChange={(e) => { setMessage(e.target.value) }} />
+                <Submit onClick={() => { onFormSubmit(name, email, message) }}>Submit</Submit>
             </InputCont>
         </ContactField>
     </ContactCont>
 }
 
 Contact.defaultProps = {
-    onFormSubmit: () => {}
+    onFormSubmit: () => { }
 }
 
 export default Contact;
