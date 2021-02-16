@@ -12,12 +12,6 @@ export default function Portfolio({ }) {
   const [contactColor, setContactColor] = useState(false);
   const [contactBg, setContactBg] = useState(false);
 
-  // Cards
-
-  const [card1, setCard1] = useState(true);
-  const [card2, setCard2] = useState(false);
-  const [card3, setCard3] = useState(false);
-
   // HANDLE PLAGE SCROLL
 
   const home = useRef(null);
@@ -69,22 +63,6 @@ export default function Portfolio({ }) {
     setContactBg(false);
 
     scrollPage(home);
-  }
-
-  const HandleCard1 = () => {
-    setCard1(true);
-    setCard2(false);
-    setCard3(false);
-  }
-  const HandleCard2 = () => {
-    setCard1(false);
-    setCard2(true);
-    setCard3(false);
-  }
-  const HandleCard3 = () => {
-    setCard1(false);
-    setCard2(false);
-    setCard3(true);
   }
 
   // ABOUT
@@ -153,16 +131,6 @@ export default function Portfolio({ }) {
           // Contact Button
           cColor={contactColor}
           cBg={contactBg}
-          // Cards
-          onCard1Click={HandleCard1}
-          bg1={card1}
-          color1={card1}
-          onCard2Click={HandleCard2}
-          bg2={card2}
-          color2={card2}
-          onCard3Click={HandleCard3}
-          bg3={card3}
-          color3={card3}
         />
       </div >
 
