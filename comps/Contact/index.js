@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
+
 import Social from '../Social';
 
 const Container = styled.div`
@@ -10,9 +11,10 @@ const Container = styled.div`
 
 const Background = styled.div`
     position: absolute;
-    min-width: 1060px;
+    width:100%;
+    max-width: 1060px;
     min-height: 535px;
-    background: #181826;
+    background: #181827;
     mix-blend-mode: screen;
     box-shadow: inset 0px -100px 120px rgba(90, 215, 242, 0.15);
     backdrop-filter: blur(17px);
@@ -25,7 +27,8 @@ const Background = styled.div`
 
 const ContactCont = styled.div`
     position: absolute;
-    min-width: 1060px;
+    width:100%;
+    max-width: 1060px;
     min-height: 535px;
     display:flex;
     align-items:center;
@@ -67,13 +70,16 @@ const Icon = styled.div`
 const SocialCont = styled.div`
     position:relative;
     width:80%;
-    top:80px;
-    left:-70px;
+    //top:80px;
+    left:-30px;
+    align-self:flex-start;
+    padding-right:70px;
+    margin-top:70px;
 `;
 
 const ContactField = styled.div`
     position:relative;
-    min-width:400px;
+    max-width:400px;
     min-height:460px;
     background: #FFFFFF;
     border-radius: 20px;
@@ -163,6 +169,7 @@ const Main = ({ onFormSubmit }) => {
             </SocialContacts>
             <SocialCont>
                 <Social
+                scale="none"
                     iconSize="40px"
                 />
             </SocialCont>

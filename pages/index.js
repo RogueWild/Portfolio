@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import HomePage from './home';
 import AboutPage from './about';
+import WorksPage from './works';
 import ContactPage from './contact';
 
 export default function Portfolio({ }) {
@@ -16,6 +17,7 @@ export default function Portfolio({ }) {
 
   const home = useRef(null);
   const about = useRef(null);
+  const works = useRef(null);
   const contact = useRef(null);
 
   const scrollPage = (page) => page.current.scrollIntoView();
@@ -87,6 +89,8 @@ export default function Portfolio({ }) {
 
     setContactColor(false);
     setContactBg(false);
+
+    scrollPage(works);
   }
 
   // CONTACT
@@ -136,6 +140,12 @@ export default function Portfolio({ }) {
 
       <div ref={about}>
         <AboutPage />
+      </div>
+
+      <div ref={works}>
+        <WorksPage
+
+        />
       </div>
 
       <div ref={contact}>
