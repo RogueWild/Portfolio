@@ -59,7 +59,7 @@ export default function HomePage({ onLogoClick, cColor, cBg, HomeClicked, AboutC
                 </div>
                 <div className="text">
                     <Text text="Hello I'm" size="30px" weight="normal" margin="0px 0px 5px 0px" />
-                    <Text text="Mike" size="50px" weight="300" family="Comfortaa" bg="#FA574F" width="123px" height="49px" color="#1B1D23" />
+                    <Text text="Mike" size="50px" weight="300" family="'Comfortaa', cursive" bg="#FA574F" width="123px" height="49px" color="#1B1D23" />
                     <Text text="Uderevskyi" size="38px" weight="normal" margin="0px 0px 10px 0px" />
                     <Text text="UI/UX Designer" size="20px" color="#52ACFF" weight="normal" />
                     <Text text="Front-end Developer" size="20px" color="#86E490" weight="normal" />
