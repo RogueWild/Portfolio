@@ -10,7 +10,7 @@ const LogoText = styled.p`
     font-weight:${props => props.fontWeight ? props.fontWeight : "normal"};
     margin-left:${props => props.marL ? props.marL : ""};
     color: #F3F3F3;
-    font-family:Comfortaa;
+    font-family:'Comfortaa';
     cursor:pointer;
 `;
 
