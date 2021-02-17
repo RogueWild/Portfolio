@@ -4,7 +4,7 @@ import Nav from '../comps/Nav';
 import Text from '../comps/Text';
 import MainBoxCard from '../comps/MainBoxCard';
 
-export default function HomePage({ color1, color2, color3, bg1, bg2, bg3, onCard1Click, onCard2Click, onCard3Click, onLogoClick, cColor, cBg, HomeClicked, AboutClicked, WorksClicked, ContactClicked, homeFontWeight, aboutFontWeight, worksFontWeight }) {
+export default function HomePage({ onLogoClick, cColor, cBg, HomeClicked, AboutClicked, WorksClicked, ContactClicked, homeFontWeight, aboutFontWeight, worksFontWeight }) {
 
     const [showDesignDesc, setShowDesignDesc] = useState(true)
     const [showDesignDev, setShowDesignDev] = useState(false)
@@ -70,24 +70,27 @@ export default function HomePage({ color1, color2, color3, bg1, bg2, bg3, onCard
                             bg={card1}
                             color={card1}
                             header="Design"
+                            icon="/designIcon.png"
                         >
                         </MainBoxCard>
                         <MainBoxCard onCardClick={HandleCard2}
                             bg={card2}
                             color={card2}
                             header="Front-end Development"
+                            icon="/codeIcon.png"
                         >
                         </MainBoxCard>
                         <MainBoxCard onCardClick={HandleCard3}
                             bg={card3}
                             color={card3}
                             header="Computer Graphics"
+                            icon="/CGIcon.png"
                         >
                         </MainBoxCard>
                     </div>
                     {showDesignDesc ?
                         <div className="desc">
-                            <Text text="Experience in Design" size="24px" weight="normal" />
+                            <Text text="Experience in Design" size="24px" weight="normal" whiteSpace="none" />
                             <Text text="My experience combines different types of design skills. The range of these abilities includes User Interface Design, Graphic Design, Product Design, Logo Design, and Character Design. Over 3 years of experience being in the design field, I learned various practices, tricks, and modern trends in the design industry."
                                 size="18px" weight="300" margin="50px 0px 0px 0px" whiteSpace="none"
                             />
@@ -95,7 +98,7 @@ export default function HomePage({ color1, color2, color3, bg1, bg2, bg3, onCard
                         : null}
                     {showDesignDev ?
                         <div className="desc">
-                            <Text text="Experience in Front-end Development" size="24px" weight="normal" />
+                            <Text text="Experience in Front-end Development" size="24px" weight="normal" whiteSpace="none" />
                             <Text text="Description"
                                 size="18px" weight="300" margin="50px 0px 0px 0px" whiteSpace="none"
                             />
@@ -103,7 +106,7 @@ export default function HomePage({ color1, color2, color3, bg1, bg2, bg3, onCard
                         : null}
                     {showDesignCg ?
                         <div className="desc">
-                            <Text text="Experience in Computer Graphics" size="24px" weight="normal" />
+                            <Text text="Experience in Computer Graphics" size="24px" weight="normal" whiteSpace="none" />
                             <Text text="Description"
                                 size="18px" weight="300" margin="50px 0px 0px 0px" whiteSpace="none"
                             />

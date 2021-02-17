@@ -15,15 +15,20 @@ const SocialIcon = styled.div`
     background-image:${props => props.url ? "url(" + props.url + ")" : ""};
     background-size:contain;
     cursor: pointer;
+
+    &:hover {
+        transform:${props => props.scale ? props.scale : "scale(1.2)"};
+    }
+    transition: 0.3s;
 `;
 
-const SocialButton = ({ width, height, url }) => {
+const SocialButton = ({ width, height, url, scale }) => {
     return <motion.div
         whileHover={{
-            scale: 1.2,
-            transition: { duration: 0.3 }
+            //scale: 1.2,
+            //transition: { duration: 0.3 }
         }} >
-        <SocialIcon
+        <SocialIcon scale={scale}
             width={width}
             height={height}
             url={url}
@@ -31,24 +36,24 @@ const SocialButton = ({ width, height, url }) => {
     </motion.div>
 }
 
-const Social = ({ iconSize }) => {
-    return <SocialBox>
+const Social = ({ iconSize, scale }) => {
+    return <SocialBox >
         <a href="https://www.instagram.com/rogue.wild/" target="_blank">
-            <SocialButton
+            <SocialButton scale={scale}
                 width={iconSize}
                 height={iconSize}
                 url="/social/instagram.png"
             ></SocialButton>
         </a>
         <a href="https://dribbble.com/RogueWild" target="_blank">
-            <SocialButton
+            <SocialButton scale={scale}
                 width={iconSize}
                 height={iconSize}
                 url="/social/dribble.png"
             ></SocialButton>
         </a>
         <a href="https://github.com/RogueWild" target="_blank">
-            <SocialButton
+            <SocialButton scale={scale}
                 width={iconSize}
                 height={iconSize}
                 url="/social/github.png"

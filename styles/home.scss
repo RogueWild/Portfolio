@@ -36,13 +36,16 @@
             align-self: flex-end;
 
             .cards {
+                width: 40%;
+                max-width: 50%;
+                min-width: 330px;
                 display: flex;
                 flex-direction: column;
                 margin: 70px;
             }
 
             .desc {
-                width: 40%;
+                width: 38%;
                 height: 70%;
             }
         }
