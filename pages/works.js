@@ -16,7 +16,10 @@ export default function WorksPage({ }) {
                 </div>
                 <div className="projects">
                     <Project
-
+                    img="/tut.jpg"
+                    headerText="Tutor Talk"
+                    headerColor="black"
+                    headerWeight="bold"
                     />
                     <Project
                         maxWidth="835px"
