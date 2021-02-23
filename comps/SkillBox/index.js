@@ -16,7 +16,6 @@ const SkillCont = styled.div`
     align-items: center;
     text-align: center;
     margin-right:15px;
-    white-space: nowrap;
 `;
 
 const SkillBox = ({ text }) => {

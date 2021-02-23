@@ -4,11 +4,11 @@ import styled, { css } from 'styled-components';
 import Text from '../Text';
 
 const ProjectCont = styled.div`
-    min-width:385px;
+    min-width:100px;
     width:100%;
     max-width:${props => props.maxWidth ? props.maxWidth : "385px"};
-    min-height:385px;
-    background-image:${props => props.img ? props.img : "url(/tempImg.jpg)"};
+    height:90%;
+    background-image:${props => props.img ? "url(" + props.img + ")" : "url(/tempImg.jpg)"};
     background-position:center;
     //background-size:contain;
 
@@ -28,8 +28,8 @@ const HeaderCont = styled.div`
     border-radius:10px;
 `;
 
-const Project = ({ maxWidth, headerText, headerColor, headerSize, headerWeight, headerFamily, headerBg, headerWidth, headerHeight, headerMargin, headerWhiteSpace }) => {
-    return <ProjectCont maxWidth={maxWidth}>
+const Project = ({ img, maxWidth, headerText, headerColor, headerSize, headerWeight, headerFamily, headerBg, headerWidth, headerHeight, headerMargin, headerWhiteSpace }) => {
+    return <ProjectCont img={img} maxWidth={maxWidth}>
         <HeaderCont>
             <Text text={headerText} color={headerColor} size={headerSize} weight={headerWeight} family={headerFamily} bg={headerBg} width={headerWidth} height={headerHeight} margin={headerMargin} whiteSpace={headerWhiteSpace} />
         </HeaderCont>

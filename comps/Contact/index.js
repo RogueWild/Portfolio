@@ -80,31 +80,39 @@ const SocialCont = styled.div`
 const ContactField = styled.div`
     position:relative;
     max-width:400px;
+    width:100%;
     min-height:460px;
     background: #FFFFFF;
     border-radius: 20px;
     margin-left:45px;
     display:flex;
     flex-direction:column;
+    
+    @media (max-width: 830px) {
+        width:33%;
+  }
+  transition:1s;
 `;
 
 const InputCont = styled.div`
+    position:relative;
     display:flex;
     flex-direction:column;
-    min-width:20%;
+    width:100%;
     min-height:10%;
     padding:30px 30px 0px 30px;
 `;
 const Input = styled.input`
     background: #FFFFFF;
-    min-width:340px;
+    width:100%;
     min-height:45px;
     border: 2px solid #E1E1E9;
     border-radius: 5px;
 `;
 const MessageCont = styled.textarea`
+    position: relative;
     background: #F3F3F3;
-    min-width:340px;
+    width:100%;
     min-height:100px;
     max-width:400px;
     max-height:120px;
@@ -169,7 +177,7 @@ const Main = ({ onFormSubmit }) => {
             </SocialContacts>
             <SocialCont>
                 <Social
-                scale="none"
+                    scale="none"
                     iconSize="40px"
                 />
             </SocialCont>

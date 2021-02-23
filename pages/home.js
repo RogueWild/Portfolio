@@ -70,6 +70,7 @@ export default function HomePage({ onLogoClick, cColor, cBg, HomeClicked, AboutC
                             bg={card1}
                             color={card1}
                             header="Design"
+                            text="I can Design"
                             icon="/designIcon.png"
                         >
                         </MainBoxCard>
@@ -77,6 +78,7 @@ export default function HomePage({ onLogoClick, cColor, cBg, HomeClicked, AboutC
                             bg={card2}
                             color={card2}
                             header="Front-end Development"
+                            text="I can Code"
                             icon="/codeIcon.png"
                         >
                         </MainBoxCard>
@@ -84,6 +86,7 @@ export default function HomePage({ onLogoClick, cColor, cBg, HomeClicked, AboutC
                             bg={card3}
                             color={card3}
                             header="Computer Graphics"
+                            text="I can do some cool Digital Artworks"
                             icon="/CGIcon.png"
                         >
                         </MainBoxCard>
@@ -91,7 +94,7 @@ export default function HomePage({ onLogoClick, cColor, cBg, HomeClicked, AboutC
                     {showDesignDesc ?
                         <div className="desc">
                             <Text text="Experience in Design" size="24px" weight="normal" whiteSpace="none" />
-                            <Text text="My experience combines different types of design skills. The range of these abilities includes User Interface Design, Graphic Design, Product Design, Logo Design, and Character Design. Over 3 years of experience being in the design field, I learned various practices, tricks, and modern trends in the design industry."
+                            <Text text="My experience combines different types of design skills. The range of these abilities includes User Interface Design, Graphic Design, Product Design, Logo Design, and Character Design. With over 3 years of experience in the design field, I learned various practices, tricks, and modern trends in the design industry."
                                 size="18px" weight="300" margin="50px 0px 0px 0px" whiteSpace="none"
                             />
                         </div>
@@ -99,7 +102,7 @@ export default function HomePage({ onLogoClick, cColor, cBg, HomeClicked, AboutC
                     {showDesignDev ?
                         <div className="desc">
                             <Text text="Experience in Front-end Development" size="24px" weight="normal" whiteSpace="none" />
-                            <Text text="Description"
+                            <Text text="When it comes to development, my knowledge of React and Next.js libraries allows me to build not complex but clean and usable components that will subsequently be used for building a website or an application."
                                 size="18px" weight="300" margin="50px 0px 0px 0px" whiteSpace="none"
                             />
                         </div>
@@ -107,7 +110,7 @@ export default function HomePage({ onLogoClick, cColor, cBg, HomeClicked, AboutC
                     {showDesignCg ?
                         <div className="desc">
                             <Text text="Experience in Computer Graphics" size="24px" weight="normal" whiteSpace="none" />
-                            <Text text="Description"
+                            <Text text="My first hobby and still my passion is CG. I have been self-taught but it did not stop me from becoming an experienced CG artist. With a wide knowledge of CG only lacking practice I would be existed to get a job and work in this field."
                                 size="18px" weight="300" margin="50px 0px 0px 0px" whiteSpace="none"
                             />
                         </div>

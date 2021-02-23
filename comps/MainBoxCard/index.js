@@ -5,8 +5,9 @@ import Image from 'next/image';
 
 const CardCont = styled.div`
     position:relative;
-    min-width:10%;
-    height:130px;
+    min-width:350px;
+    height:20%;
+    min-height:120px;
     background:${props => props.bg ? "#3F4751" : "#30333C"};
     border-radius:5px;
     margin-bottom:20px;
