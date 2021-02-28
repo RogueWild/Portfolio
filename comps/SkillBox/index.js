@@ -16,6 +16,11 @@ const SkillCont = styled.div`
     align-items: center;
     text-align: center;
     margin-right:15px;
+
+    &:hover {
+        color:#5EC7FE;
+    }
+    transition: 0.3s;
 `;
 
 const SkillBox = ({ text }) => {
