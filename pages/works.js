@@ -78,7 +78,7 @@ export default function WorksPage({ HandleGalleryOff, HandleGalleryOn, galleryOp
                         linksContInvis={true}
                         buttonVis={true}
                         img="/projectCover/dune.jpg"
-                        headerText="Dune Cinematic Titles - Motion Graphics Project"
+                        headerText="Motion Graphics Project"
                         headerColor="black"
                         onClick={HandleVideoOn}
                     />
