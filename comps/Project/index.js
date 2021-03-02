@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 
 import Text from '../Text';
-import { transform } from 'framer-motion';
 
 const ProjectCont = styled.div`
+    position: relative;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
@@ -14,22 +14,31 @@ const ProjectCont = styled.div`
     height:90%;
     background-image:${props => props.img ? "url(" + props.img + ")" : "url(/tempImg.jpg)"};
     background-position:center;
-    //background-size:contain;
+    background-size:cover;
+    background-repeat:no-repeat;
 
     border-radius:10px;
     margin:20px;
-
-    cursor: pointer;
-
+    
     &:hover {
         transform:scale(0.95);
     }
     transition: 0.3s;
 `;
 
+const BG = styled.div`
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:10px;
+    backdrop-filter:${props => props.blur ? "blur(2px)" : ""};
+    transition: 0.3s;
+`;
+
+
 const HeaderCont = styled.div`
     position: relative;
-    padding:20px;
+    padding:15px;
     border-radius:10px;
     opacity:${props => props.display ? "100%" : "0%"};
     top:${props => props.pos ? "0px" : "-20px"};
@@ -40,13 +49,33 @@ const LinksCont = styled.div`
     position: relative;
     width:100%;
     height:20%;
-    display:flex;
     justify-content:space-evenly;
     align-items:center;
-    //background: #181826;
-    backdrop-filter: blur(12px);
+    //backdrop-filter: blur(12px);
     border-radius:5px;
     opacity:${props => props.display ? "100%" : "0%"};
+    display:${props => props.invisible ? "none" : "flex"};
+    transition: 0.3s;
+`;
+
+const ContButton = styled.div`
+    position: absolute;
+    align-self:center;
+    top:37%;
+    width:100px;
+    height:100px;
+    background-image:${props => props.buttonImg ? "url(" + props.buttonImg + ")" : "url(/tempImg.jpg)"};
+    filter:invert(1);
+    background-size:contain;
+    //border-radius:100px;
+    opacity:${props => props.display ? "70%" : "0%"};
+    display:${props => props.invisible ? "flex" : "none"};
+
+    cursor: pointer;
+
+    &:hover {
+        transform:scale(1.2);
+    }
     transition: 0.3s;
 `;
 
@@ -58,32 +87,38 @@ const Link = styled.div`
     background-position:center;
     background-size:contain;
 
+    cursor: pointer;
+
     &:hover {
         transform:scale(1.3);
     }
     transition: 0.3s;
 `;
 
-const Project = ({ onIcon1Click, onIcon2Click, onIcon3Click, invisible1, invisible2, invisible3, icon1, icon2, icon3, img, maxWidth, headerText, headerColor, headerSize, headerWeight, headerFamily, headerBg, headerWidth, headerHeight, headerMargin, headerWhiteSpace }) => {
+const Project = ({ buttonVis, buttonImg, linksContInvis, onClick, onIcon1Click, onIcon2Click, onIcon3Click, invisible1, invisible2, invisible3, icon1, icon2, icon3, img, maxWidth, headerText, headerColor, headerSize, headerWeight, headerFamily, headerBg, headerWidth, headerHeight, headerMargin, headerWhiteSpace }) => {
 
     const [disp, setDisp] = useState(false);
     const [pos, setPos] = useState(false);
+    const [blur, setBlur] = useState(false);
 
     const HandleHeaderHover = () => {
         setDisp(true);
         setPos(true);
+        setBlur(true);
     }
 
     const HandleHeaderLeave = () => {
         setDisp(false);
         setPos(false);
+        setBlur(false);
     }
 
     return <ProjectCont onMouseOver={HandleHeaderHover} onMouseLeave={HandleHeaderLeave} img={img} maxWidth={maxWidth}>
+        <BG blur={blur} />
         <HeaderCont display={disp} pos={pos}>
             <Text text={headerText} color={headerColor} size={headerSize} weight={headerWeight} family={headerFamily} bg={headerBg} width={headerWidth} height={headerHeight} margin={headerMargin} whiteSpace={headerWhiteSpace} />
         </HeaderCont>
-        <LinksCont display={disp}>
+        <LinksCont display={disp} invisible={linksContInvis}>
             <Link invisible={invisible1}
                 icon={icon1}
                 onClick={onIcon1Click}
@@ -97,6 +132,12 @@ const Project = ({ onIcon1Click, onIcon2Click, onIcon3Click, invisible1, invisib
                 onClick={onIcon3Click}
             />
         </LinksCont>
+        <ContButton
+            buttonImg={buttonImg}
+            onClick={onClick}
+            invisible={buttonVis}
+            display={disp}
+        />
     </ProjectCont>
 }
 

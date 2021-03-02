@@ -33,12 +33,14 @@ export default function Portfolio({ }) {
       setWorksWeight("normal");
       setContactColor(false);
       setContactBg(false);
+      OffPopUps();
     } else if (pos >= about && pos <= works - 1) {
       setHomeWeight("normal");
       setAboutWeight("bold");
       setWorksWeight("normal");
       setContactColor(false);
       setContactBg(false);
+      OffPopUps();
     } else if (pos >= works && pos <= contact - 1) {
       setHomeWeight("normal");
       setAboutWeight("normal");
@@ -51,6 +53,7 @@ export default function Portfolio({ }) {
       setWorksWeight("normal");
       setContactColor(true);
       setContactBg(true);
+      OffPopUps();
     }
   }
 
@@ -65,6 +68,8 @@ export default function Portfolio({ }) {
     setContactBg(false);
 
     scrollPage(home);
+
+    OffPopUps();
   }
 
   // ABOUT
@@ -78,6 +83,8 @@ export default function Portfolio({ }) {
     setContactBg(false);
 
     scrollPage(about);
+
+    OffPopUps();
   }
 
   // WORKS
@@ -93,6 +100,41 @@ export default function Portfolio({ }) {
     scrollPage(works);
   }
 
+  const OffPopUps = () => {
+    HandleGalleryOff();
+    HandleVideoOff();
+  }
+
+  const [popupBg, setPopupBg] = useState(false);
+
+  // gallery
+
+  const [galleryOpen, setGallery] = useState(false);
+
+  const HandleGalleryOn = () => {
+    setGallery(true);
+    setPopupBg(true);
+  }
+
+  const HandleGalleryOff = () => {
+    setGallery(false);
+    setPopupBg(false);
+  }
+
+  // video
+
+  const [videoOpen, setVideo] = useState(false);
+
+  const HandleVideoOn = () => {
+    setVideo(true);
+    setPopupBg(true);
+  }
+
+  const HandleVideoOff = () => {
+    setVideo(false);
+    setPopupBg(false);
+  }
+
   // CONTACT
 
   const HandleContact = () => {
@@ -104,10 +146,12 @@ export default function Portfolio({ }) {
     setContactBg(true);
 
     scrollPage(contact);
+
+    OffPopUps();
   }
 
   const HandleFormSubmit = (name, email, message) => {
-
+    alert("Something went wrong. Please use email to contact me.")
   }
 
   // OTHER
@@ -119,8 +163,9 @@ export default function Portfolio({ }) {
   }, []);
 
   return (
-    <div>
-      <div ref={home}>
+    <div className="main_page">
+      {popupBg ? <div onClick={OffPopUps} className="popup_bg" /> : null}
+      <div ref={home} className="home">
         <HomePage
           onLogoClick={HandleHome}
           // Clicking Page buttons
@@ -138,17 +183,24 @@ export default function Portfolio({ }) {
         />
       </div >
 
-      <div ref={about}>
+      <div ref={about} className="about">
         <AboutPage />
       </div>
 
-      <div ref={works}>
+      <div ref={works} className="works">
         <WorksPage
-
+          // gallery
+          galleryOpen={galleryOpen}
+          HandleGalleryOn={HandleGalleryOn}
+          HandleGalleryOff={HandleGalleryOff}
+          // video
+          videoOpen={videoOpen}
+          HandleVideoOn={HandleVideoOn}
+          HandleVideoOff={HandleVideoOff}
         />
       </div>
 
-      <div ref={contact}>
+      <div ref={contact} className="contact">
         <ContactPage
           onFormSubmit={HandleFormSubmit}
         />
