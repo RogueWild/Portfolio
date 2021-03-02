@@ -167,10 +167,10 @@ const Main = ({ onFormSubmit }) => {
             <Text size="36px" weight="regular" margin="0px 0px 10px 0px">Have questions?</Text>
             <Text size="20px" weight="300" margin="0px 0px 90px 0px">Do not hesitate to contact me!</Text>
             <SocialContacts>
-                <Icon url="/phone.png" /> <Text size="20px">+1 778 333 999</Text>
+                {/* <Icon url="/phone.png" /> <Text size="20px">+1 778 333 999</Text> */}
             </SocialContacts>
             <SocialContacts>
-                <Icon url="/mail.png" /> <Text size="20px">0.dreamer.009@gmail.com</Text>
+                <Icon url="/mail.png" /> <Text size="20px">muderevskyi@gmail.com</Text>
             </SocialContacts>
             <SocialContacts>
                 <Icon url="/linkedin.png" /> <Text size="20px" weight="400"><a href="https://www.linkedin.com/in/mike-uderevskyi-18b9b0204/" target="_black">LinkedIn.com</a></Text>

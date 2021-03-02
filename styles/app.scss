@@ -1,4 +1,17 @@
 html {
-    background-color: #1B1D23;
-    //scroll-behavior:smooth;
+    background-color: #1b1d23;
+    scroll-behavior:smooth;
+}
+
+.main_page {
+    position: relative;
+    
+    .popup_bg {
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        background: black;
+        opacity: 70%;
+        z-index: 9;
+    }
 }

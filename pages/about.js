@@ -8,10 +8,8 @@ import { motion } from 'framer-motion';
 const SkillBoxMotion = ({ text, Const }) => {
     return <motion.div
         drag
-        dragPropagation
         dragListener
         dragConstraints={Const}
-        dragPropagation={true}
     >
         <SkillBox text={text} />
     </motion.div>
