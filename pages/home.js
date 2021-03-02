@@ -64,8 +64,8 @@ export default function HomePage({ onLogoClick, cColor, cBg, HomeClicked, AboutC
                     <Text text="UI/UX Designer" size="20px" color="#52ACFF" weight="normal" />
                     <Text text="Front-end Developer" size="20px" color="#86E490" weight="normal" />
                 </div>
-                <div className="welcome">
-                    Welcome
+                <div className="welcome_cont">
+                    <div className="welcome_text">Welcome</div>
                 </div>
                 <div className="mainBox">
                     <div className="cards">

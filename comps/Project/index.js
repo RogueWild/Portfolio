@@ -35,9 +35,9 @@ const BG = styled.div`
     transition: 0.3s;
 `;
 
-
 const HeaderCont = styled.div`
     position: relative;
+    width:100%;
     padding:15px;
     border-radius:10px;
     opacity:${props => props.display ? "100%" : "0%"};

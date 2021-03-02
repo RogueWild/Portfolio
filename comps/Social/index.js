@@ -59,6 +59,13 @@ const Social = ({ iconSize, scale }) => {
                 url="/social/github.png"
             ></SocialButton>
         </a>
+        <a href="https://www.artstation.com/mike-bay" target="_blank">
+            <SocialButton scale={scale}
+                width={iconSize}
+                height={iconSize}
+                url="/social/artstation.png"
+            ></SocialButton>
+        </a>
     </SocialBox>
 }
 

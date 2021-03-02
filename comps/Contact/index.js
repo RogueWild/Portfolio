@@ -70,7 +70,7 @@ const Icon = styled.div`
 const SocialCont = styled.div`
     position:relative;
     width:80%;
-    //top:80px;
+    top:40px;
     left:-30px;
     align-self:flex-start;
     padding-right:70px;
