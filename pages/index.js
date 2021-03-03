@@ -195,8 +195,6 @@ export default function Portfolio({ }) {
           onFormSubmit={HandleFormSubmit}
         />
       </div>
-
-
     </div>
   )
 }

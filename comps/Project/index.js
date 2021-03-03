@@ -64,6 +64,7 @@ const LinksCont = styled.div`
     opacity:${props => props.display ? "100%" : "0%"};
     display:${props => props.invisible ? "none" : "flex"};
     transition: 0.3s;
+    z-index:1;
 `;
 
 const ButtonCont = styled.div`
