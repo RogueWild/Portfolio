@@ -133,8 +133,10 @@ export default function Portfolio({ }) {
     //alert("Something went wrong. Please use email to contact me.");
     if (subject == null && message == null) {
       alert("Please fill in all fields")
-    } else {
+    } else if (name == null) {
       window.open(`mailto:0.dreamer.009@gmail.com?subject=${subject}&body=${message}`);
+    } else {
+      window.open(`mailto:0.dreamer.009@gmail.com?subject=${subject}&body=${message + "- " + name}`);
     }
   }
 

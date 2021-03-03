@@ -48,6 +48,8 @@ export default function WorksPage({ HandleDesignGalleryOn, HandleArtGalleryOn, a
                         buttonVis={true}
                         linksContInvis={true}
                         secondButton={true}
+                        line={true}
+                        secondHeader={true}
                         onClick1={HandleArtGalleryOn}
                         onClick2={HandleDesignGalleryOn}
                     />
