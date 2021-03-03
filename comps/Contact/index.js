@@ -47,6 +47,7 @@ const Text = styled.p`
     font-size:${props => props.size ? props.size : ""};
     font-weight:${props => props.weight ? props.weight : "300"};
     margin:${props => props.margin ? props.margin : "0"};
+    cursor:${props => props.pointer ? "pointer" : ""};
 `;
 
 const SocialContacts = styled.div`
@@ -159,7 +160,7 @@ const Contact = ({ onFormSubmit }) => {
 const Main = ({ onFormSubmit }) => {
 
     const [name, setName] = useState(null);
-    const [email, setEmail] = useState(null);
+    const [subject, setSubject] = useState(null);
     const [message, setMessage] = useState(null);
 
     return <ContactCont>
@@ -170,7 +171,7 @@ const Main = ({ onFormSubmit }) => {
                 {/* <Icon url="/phone.png" /> <Text size="20px">+1 778 333 999</Text> */}
             </SocialContacts>
             <SocialContacts>
-                <Icon url="/mail.png" /> <Text size="20px">muderevskyi@gmail.com</Text>
+                <Icon url="/mail.png" /> <Text size="20px" weight="400">muderevskyi@gmail.com</Text>
             </SocialContacts>
             <SocialContacts>
                 <Icon url="/linkedin.png" /> <Text size="20px" weight="400"><a href="https://www.linkedin.com/in/mike-uderevskyi-18b9b0204/" target="_black">LinkedIn.com</a></Text>
@@ -188,13 +189,13 @@ const Main = ({ onFormSubmit }) => {
                 <Input onChange={(e) => { setName(e.target.value) }} />
             </InputCont>
             <InputCont>
-                <Label>Your Email</Label>
-                <Input onChange={(e) => { setEmail(e.target.value) }} />
+                <Label>Subject <span style={{ color: "red" }}>*</span></Label>
+                <Input onChange={(e) => { setSubject(e.target.value) }} />
             </InputCont>
             <InputCont>
-                <Label>Your Message</Label>
+                <Label>Message <span style={{ color: "red" }}>*</span></Label>
                 <MessageCont onChange={(e) => { setMessage(e.target.value) }} />
-                <Submit onClick={() => { onFormSubmit(name, email, message) }}>Submit</Submit>
+                <Submit onClick={() => { onFormSubmit(name, subject, message) }}>Send</Submit>
             </InputCont>
         </ContactField>
     </ContactCont>
@@ -205,5 +206,3 @@ Contact.defaultProps = {
 }
 
 export default Contact;
-
-// linear-gradient(255.81deg, rgba(95, 236, 255, 0.3) 0%, rgba(55, 154, 167, 0) 100%);

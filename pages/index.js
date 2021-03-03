@@ -60,13 +60,6 @@ export default function Portfolio({ }) {
   // HOME
 
   const HandleHome = () => {
-    setHomeWeight("bold");
-    setAboutWeight("normal");
-    setWorksWeight("normal");
-
-    setContactColor(false);
-    setContactBg(false);
-
     scrollPage(home);
 
     OffPopUps();
@@ -75,13 +68,6 @@ export default function Portfolio({ }) {
   // ABOUT
 
   const HandleAbout = () => {
-    setHomeWeight("normal");
-    setAboutWeight("bold");
-    setWorksWeight("normal");
-
-    setContactColor(false);
-    setContactBg(false);
-
     scrollPage(about);
 
     OffPopUps();
@@ -90,13 +76,6 @@ export default function Portfolio({ }) {
   // WORKS
 
   const HandleWorks = () => {
-    setHomeWeight("normal");
-    setAboutWeight("normal");
-    setWorksWeight("bold");
-
-    setContactColor(false);
-    setContactBg(false);
-
     scrollPage(works);
   }
 
@@ -109,15 +88,22 @@ export default function Portfolio({ }) {
 
   // gallery
 
-  const [galleryOpen, setGallery] = useState(false);
+  const [artGalleryOpen, setArtGallery] = useState(false);
+  const [designGalleryOpen, setDesignGallery] = useState(false);
 
-  const HandleGalleryOn = () => {
-    setGallery(true);
+  const HandleArtGalleryOn = () => {
+    setArtGallery(true);
+    setPopupBg(true);
+  }
+
+  const HandleDesignGalleryOn = () => {
+    setDesignGallery(true);
     setPopupBg(true);
   }
 
   const HandleGalleryOff = () => {
-    setGallery(false);
+    setArtGallery(false);
+    setDesignGallery(false);
     setPopupBg(false);
   }
 
@@ -138,20 +124,18 @@ export default function Portfolio({ }) {
   // CONTACT
 
   const HandleContact = () => {
-    setHomeWeight("normal");
-    setAboutWeight("normal");
-    setWorksWeight("normal");
-
-    setContactColor(true);
-    setContactBg(true);
-
     scrollPage(contact);
 
     OffPopUps();
   }
 
-  const HandleFormSubmit = (name, email, message) => {
-    alert("Something went wrong. Please use email to contact me.")
+  const HandleFormSubmit = (name, subject, message) => {
+    //alert("Something went wrong. Please use email to contact me.");
+    if (subject == null && message == null) {
+      alert("Please fill in all fields")
+    } else {
+      window.open(`mailto:0.dreamer.009@gmail.com?subject=${subject}&body=${message}`);
+    }
   }
 
   // OTHER
@@ -190,9 +174,12 @@ export default function Portfolio({ }) {
       <div ref={works} className="works">
         <WorksPage
           // gallery
-          galleryOpen={galleryOpen}
-          HandleGalleryOn={HandleGalleryOn}
-          HandleGalleryOff={HandleGalleryOff}
+          artGalleryOpen={artGalleryOpen}
+          HandleArtGalleryOn={HandleArtGalleryOn}
+          HandleArtGalleryOff={HandleGalleryOff}
+          designGalleryOpen={designGalleryOpen}
+          HandleDesignGalleryOn={HandleDesignGalleryOn}
+          HandleDesignGallerOff={HandleGalleryOff}
           // video
           videoOpen={videoOpen}
           HandleVideoOn={HandleVideoOn}
