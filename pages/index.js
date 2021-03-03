@@ -80,7 +80,7 @@ export default function Portfolio({ }) {
   }
 
   const OffPopUps = () => {
-    HandleGalleryOff();
+    //HandleGalleryOff();
     HandleVideoOff();
   }
 
@@ -182,6 +182,7 @@ export default function Portfolio({ }) {
           designGalleryOpen={designGalleryOpen}
           HandleDesignGalleryOn={HandleDesignGalleryOn}
           HandleDesignGallerOff={HandleGalleryOff}
+          onCloseClick={HandleGalleryOff}
           // video
           videoOpen={videoOpen}
           HandleVideoOn={HandleVideoOn}

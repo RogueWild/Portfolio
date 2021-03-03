@@ -4,6 +4,7 @@ import SkillBox from '../comps/SkillBox';
 import Image from 'next/image';
 
 import { motion } from 'framer-motion';
+import { useSpring, animated } from 'react-spring'
 
 const SkillBoxMotion = ({ text, Const }) => {
     return <motion.div
@@ -15,18 +16,31 @@ const SkillBoxMotion = ({ text, Const }) => {
     </motion.div>
 }
 
+const calc = (x, y) => [-(y - window.innerHeight / 3) / 20, (x - window.innerWidth / 4) / 20, 1.05]
+const trans = (x, y, s) => `perspective(700px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
+
 export default function AboutPage({ }) {
+
+    const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 30, tension: 500, friction: 30 } }))
 
     const imgSize = 400;
     return (
         <div className="aboutPageMain">
             <div className="aboutPage">
                 <div className="about">
-                    <Image src={"/me.png"}
-                        width={imgSize}
-                        height={imgSize}
-                        quality={100}
-                    />
+                    <div className="image">
+                        <animated.div
+                            onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
+                            onMouseLeave={() => set({ xys: [0, 0, 1] })}
+                            style={{ transform: props.xys.interpolate(trans) }}
+                        >
+                            <Image src={"/me.png"}
+                                width={imgSize}
+                                height={imgSize}
+                                quality={100}
+                            />
+                        </animated.div>
+                    </div>
                     <div className="skillsText">
                         <h1 style={{ fontWeight: "normal", fontSize: "36px", color: "white" }}>My Skills</h1>
                         <p style={{ fontWeight: "300", fontSize: "18px", color: "white" }}>My skillset combines both Design, Front-end Development, and artistic experience. Design a User Interface? Sure. Implement it into usable components? No problem. Make a professional photo manipulation? With pleasure!</p>
