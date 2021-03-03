@@ -39,7 +39,15 @@ const HeaderCont = styled.div`
     position: relative;
     width:100%;
     padding:15px;
-    border-radius:10px;
+    opacity:${props => props.display ? "100%" : "0%"};
+    top:${props => props.pos ? "0px" : "-20px"};
+    transition: 0.3s;
+`;
+
+const SecondHeader = styled.div`
+    position: absolute;
+    right:0px;
+    padding:15px;
     opacity:${props => props.display ? "100%" : "0%"};
     top:${props => props.pos ? "0px" : "-20px"};
     transition: 0.3s;
@@ -58,10 +66,29 @@ const LinksCont = styled.div`
     transition: 0.3s;
 `;
 
-const ContButton = styled.div`
-    position: absolute;
+const ButtonCont = styled.div`
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:space-evenly;
+`;
+
+const Line = styled.div`
+    position:relative;
+    background:white;
+    opacity:${props => props.display ? "30%" : "0%"};
+    border-radius:10px;
+    width:5px;
+    height:90%;
     align-self:center;
-    top:37%;
+    transition: 0.3s;
+`;
+
+const Button = styled.div`
+    position: relative;
+    align-self:center;
+    //top:37%;
     width:100px;
     height:100px;
     background-image:${props => props.buttonImg ? "url(" + props.buttonImg + ")" : "url(/tempImg.jpg)"};
@@ -95,7 +122,7 @@ const Link = styled.div`
     transition: 0.3s;
 `;
 
-const Project = ({ buttonVis, buttonImg, linksContInvis, onClick, onIcon1Click, onIcon2Click, onIcon3Click, invisible1, invisible2, invisible3, icon1, icon2, icon3, img, maxWidth, headerText, headerColor, headerSize, headerWeight, headerFamily, headerBg, headerWidth, headerHeight, headerMargin, headerWhiteSpace }) => {
+const Project = ({ secondHeader, line, secondButton, buttonVis, buttonImg, linksContInvis, onClick1, onClick2, onIcon1Click, onIcon2Click, onIcon3Click, invisible1, invisible2, invisible3, icon1, icon2, icon3, img, maxWidth, headerText, headerColor, headerSize, headerWeight, headerFamily, headerBg, headerWidth, headerHeight, headerMargin, headerWhiteSpace }) => {
 
     const [disp, setDisp] = useState(false);
     const [pos, setPos] = useState(false);
@@ -118,6 +145,9 @@ const Project = ({ buttonVis, buttonImg, linksContInvis, onClick, onIcon1Click, 
         <HeaderCont display={disp} pos={pos}>
             <Text text={headerText} color={headerColor} size={headerSize} weight={headerWeight} family={headerFamily} bg={headerBg} width={headerWidth} height={headerHeight} margin={headerMargin} whiteSpace={headerWhiteSpace} />
         </HeaderCont>
+        {secondHeader ? <SecondHeader display={disp} pos={pos}>
+            <Text text="Design Gallery" size="20px" />
+        </SecondHeader> : null}
         <LinksCont display={disp} invisible={linksContInvis}>
             <Link invisible={invisible1}
                 icon={icon1}
@@ -132,12 +162,23 @@ const Project = ({ buttonVis, buttonImg, linksContInvis, onClick, onIcon1Click, 
                 onClick={onIcon3Click}
             />
         </LinksCont>
-        <ContButton
-            buttonImg={buttonImg}
-            onClick={onClick}
-            invisible={buttonVis}
-            display={disp}
-        />
+        <ButtonCont>
+            <Button
+                buttonImg={buttonImg}
+                onClick={onClick1}
+                invisible={buttonVis}
+                display={disp}
+            />
+            {line ? <Line
+                display={disp}
+            /> : null}
+            {secondButton ? <Button
+                buttonImg={buttonImg}
+                onClick={onClick2}
+                invisible={buttonVis}
+                display={disp}
+            /> : null}
+        </ButtonCont>
     </ProjectCont>
 }
 

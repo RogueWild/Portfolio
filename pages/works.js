@@ -5,25 +5,9 @@ import ImageGallery from 'react-image-gallery';
 
 import Project from '../comps/Project';
 
-const images = [
-    {
-        original: 'https://cdna.artstation.com/p/assets/images/images/033/066/658/large/mike-u-space-in-my-hex.jpg?1608293227',
-        thumbnail: 'https://cdna.artstation.com/p/assets/images/images/033/066/658/large/mike-u-space-in-my-hex.jpg?1608293227',
-    },
-    {
-        original: 'https://cdna.artstation.com/p/assets/images/images/032/186/326/large/mike-u-cyberpunk.jpg?1605713631',
-        thumbnail: 'https://cdna.artstation.com/p/assets/images/images/032/186/326/large/mike-u-cyberpunk.jpg?1605713631',
-    },
-    {
-        original: 'https://cdna.artstation.com/p/assets/images/images/010/371/050/large/mike-u-everyday-06-civil-war.jpg?1524066991',
-        thumbnail: 'https://cdna.artstation.com/p/assets/images/images/010/371/050/large/mike-u-everyday-06-civil-war.jpg?1524066991',
-    },
-    {
-        original: 'https://cdna.artstation.com/p/assets/images/images/028/359/562/large/mike-u-annihilation-cover.jpg?1594236723',
-        thumbnail: 'https://cdna.artstation.com/p/assets/images/images/028/359/562/large/mike-u-annihilation-cover.jpg?1594236723',
-    },
-];
-export default function WorksPage({ HandleGalleryOff, HandleGalleryOn, galleryOpen, HandleVideoOn, HandleVideoOff, videoOpen }) {
+import {artImages, designImages} from './api/gallery';
+
+export default function WorksPage({ HandleDesignGalleryOn, HandleArtGalleryOn, artGalleryOpen, designGalleryOpen, HandleVideoOn, HandleVideoOff, videoOpen }) {
 
     const HandleLink = (url) => {
         window.open(url, "_blank");
@@ -31,8 +15,15 @@ export default function WorksPage({ HandleGalleryOff, HandleGalleryOn, galleryOp
 
     return (
         <div className="worksPageMain">
-            {galleryOpen ? <div className="gallery">
-                <ImageGallery items={images}
+            {artGalleryOpen ? <div className="gallery">
+                <ImageGallery items={artImages}
+                    width={500}
+                    height={200}
+                    showPlayButton={false}
+                />
+            </div> : null}
+            {designGalleryOpen ? <div className="gallery">
+                <ImageGallery items={designImages}
                     width={500}
                     height={200}
                     showPlayButton={false}
@@ -51,14 +42,19 @@ export default function WorksPage({ HandleGalleryOff, HandleGalleryOn, galleryOp
                 <div className="projects">
                     <Project
                         maxWidth="835px"
-                    />
-                    <Project
                         img="/projectCover/gallery.jpg"
                         buttonImg="gallery.png"
                         headerText="Artwork Gallery"
                         buttonVis={true}
                         linksContInvis={true}
-                        onClick={HandleGalleryOn}
+                        secondButton={true}
+                        line={true}
+                        secondHeader={true}
+                        onClick1={HandleArtGalleryOn}
+                        onClick2={HandleDesignGalleryOn}
+                    />
+                    <Project
+
                     />
                 </div>
                 <div className="projects">
@@ -80,7 +76,7 @@ export default function WorksPage({ HandleGalleryOff, HandleGalleryOn, galleryOp
                         img="/projectCover/dune.jpg"
                         headerText="Motion Graphics Project"
                         headerColor="black"
-                        onClick={HandleVideoOn}
+                        onClick1={HandleVideoOn}
                     />
                 </div>
             </div>
