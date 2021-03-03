@@ -122,7 +122,7 @@ const Link = styled.div`
     transition: 0.3s;
 `;
 
-const Project = ({ secondHeader, line, secondButton, buttonVis, buttonImg, linksContInvis, onClick1, onClick2, onIcon1Click, onIcon2Click, onIcon3Click, invisible1, invisible2, invisible3, icon1, icon2, icon3, img, maxWidth, headerText, headerColor, headerSize, headerWeight, headerFamily, headerBg, headerWidth, headerHeight, headerMargin, headerWhiteSpace }) => {
+const Project = ({ secondHeader, line, secondButton, buttonVis, button1Img, button2Img, linksContInvis, onClick1, onClick2, onIcon1Click, onIcon2Click, onIcon3Click, invisible1, invisible2, invisible3, icon1, icon2, icon3, img, maxWidth, headerText, headerColor, headerSize, headerWeight, headerFamily, headerBg, headerWidth, headerHeight, headerMargin, headerWhiteSpace }) => {
 
     const [disp, setDisp] = useState(false);
     const [pos, setPos] = useState(false);
@@ -164,7 +164,7 @@ const Project = ({ secondHeader, line, secondButton, buttonVis, buttonImg, links
         </LinksCont>
         <ButtonCont>
             <Button
-                buttonImg={buttonImg}
+                buttonImg={button1Img}
                 onClick={onClick1}
                 invisible={buttonVis}
                 display={disp}
@@ -173,7 +173,7 @@ const Project = ({ secondHeader, line, secondButton, buttonVis, buttonImg, links
                 display={disp}
             /> : null}
             {secondButton ? <Button
-                buttonImg={buttonImg}
+                buttonImg={button2Img}
                 onClick={onClick2}
                 invisible={buttonVis}
                 display={disp}

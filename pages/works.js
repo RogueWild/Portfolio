@@ -5,9 +5,9 @@ import ImageGallery from 'react-image-gallery';
 
 import Project from '../comps/Project';
 
-import {artImages, designImages} from './api/gallery';
+import { artImages, designImages } from './api/gallery';
 
-export default function WorksPage({ HandleDesignGalleryOn, HandleArtGalleryOn, artGalleryOpen, designGalleryOpen, HandleVideoOn, HandleVideoOff, videoOpen }) {
+export default function WorksPage({ onCloseClick, HandleDesignGalleryOn, HandleArtGalleryOn, artGalleryOpen, designGalleryOpen, HandleVideoOn, HandleVideoOff, videoOpen }) {
 
     const HandleLink = (url) => {
         window.open(url, "_blank");
@@ -17,10 +17,9 @@ export default function WorksPage({ HandleDesignGalleryOn, HandleArtGalleryOn, a
         <div className="worksPageMain">
             {artGalleryOpen ? <div className="gallery">
                 <ImageGallery items={artImages}
-                    width={500}
-                    height={200}
                     showPlayButton={false}
                 />
+                <div onClick={onCloseClick} className="close"></div>
             </div> : null}
             {designGalleryOpen ? <div className="gallery">
                 <ImageGallery items={designImages}
@@ -28,6 +27,7 @@ export default function WorksPage({ HandleDesignGalleryOn, HandleArtGalleryOn, a
                     height={200}
                     showPlayButton={false}
                 />
+                <div onClick={onCloseClick} className="close"></div>
             </div> : null}
             {videoOpen ? <div className="video">
                 <ReactPlayer
@@ -43,7 +43,8 @@ export default function WorksPage({ HandleDesignGalleryOn, HandleArtGalleryOn, a
                     <Project
                         maxWidth="835px"
                         img="/projectCover/gallery.jpg"
-                        buttonImg="gallery.png"
+                        button1Img="cg_gallery.png"
+                        button2Img="design_gallery.png"
                         headerText="Artwork Gallery"
                         buttonVis={true}
                         linksContInvis={true}
@@ -70,7 +71,7 @@ export default function WorksPage({ HandleDesignGalleryOn, HandleArtGalleryOn, a
                     />
                     <Project
                         maxWidth="835px"
-                        buttonImg="/play.png"
+                        button1Img="/play.png"
                         linksContInvis={true}
                         buttonVis={true}
                         img="/projectCover/dune.jpg"

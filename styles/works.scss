@@ -5,6 +5,8 @@
     font-family: "Open Sans", sans-serif;
 
     .gallery {
+        position: relative;
+        width: 100%;
         background: #1b1d23;
         border: 3px solid rgb(34, 43, 48);
         border-radius: 3px;
@@ -12,6 +14,27 @@
         align-self: center;
         justify-self: center;
         z-index: 10;
+
+        .close {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            margin: 20px;
+            width: 30px;
+            height: 30px;
+            background-image: url("/close.png");
+            background-size: contain;
+            opacity: 30%;
+            cursor: pointer;
+            filter: invert(1);
+
+            &:hover {
+                transform: scale(1.2);
+                transform: rotate(90deg);
+                opacity: 90%;
+            }
+            transition: 0.3s;
+        }
     }
 
     .video {
