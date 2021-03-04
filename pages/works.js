@@ -55,7 +55,14 @@ export default function WorksPage({ onCloseClick, HandleDesignGalleryOn, HandleA
                         onClick2={HandleDesignGalleryOn}
                     />
                     <Project
-
+                        img="/projectCover/epub.jpg"
+                        headerText="Interactive eBook"
+                        headerColor="black"
+                        headerWeight="500"
+                        buttonVis={true}
+                        button1Img="download.png"
+                        onClick1={() => HandleLink("https://drive.google.com/file/d/1pQKsso3j77FtZLK5MDyOK6993J91ZUZu/view?usp=sharing")}
+                        linksContInvis={true}
                     />
                 </div>
                 <div className="projects">

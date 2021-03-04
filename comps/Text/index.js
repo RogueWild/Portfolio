@@ -12,6 +12,12 @@ const TextBox = styled.div`
     margin:${props => props.margin ? props.margin : ""};
     border-radius:5px;
     white-space:${props => props.whiteSpace ? props.whiteSpace : "nowrap"} ;
+
+    @media only screen and (max-width: 680px) {
+        font-size:16px;
+    }
+
+    transition: 0.3s;
 `;
 
 const Text = ({ text, color, size, weight, family, bg, width, height, margin, whiteSpace }) => {
