@@ -16,7 +16,7 @@ const SkillBoxMotion = ({ text, Const }) => {
     </motion.div>
 }
 
-const calc = (x, y) => [-(y - window.innerHeight / 3) / 20, (x - window.innerWidth / 4) / 20, 1.05]
+const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 4) / 20, 1.05]
 const trans = (x, y, s) => `perspective(700px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
 export default function AboutPage({ }) {
