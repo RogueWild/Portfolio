@@ -13,6 +13,17 @@ const Container = styled.div`
     background:#1B1D23;
 
     //border:1px red solid;
+
+    /* @media only screen and (max-width: 640px) {
+        position:absolute;
+        width:50%;
+        height:100vh;
+        right:0px;
+        display:flex;
+        align-items:center;
+        background:#1B1D23;
+        flex-direction:column;
+    } */
 `;
 
 const FlexCont = styled.div`
