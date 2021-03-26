@@ -11,6 +11,8 @@ const SkillBoxMotion = ({ text, Const }) => {
         drag
         dragListener
         dragConstraints={Const}
+        transition={{ duration: 0.5 }}
+        whileDrag={{ scale: 0.9, filter:"invert(1)" }}
     >
         <SkillBox text={text} />
     </motion.div>

@@ -59,6 +59,10 @@ export const designImages = [
         thumbnail: 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/5c294b94379917.5e7d2e9eef41c.jpg',
     },
     {
+        original: 'https://sun9-4.userapi.com/impf/GY49ENKvvM7NbghvPjV1JSkQ-dX8jX5UkKao4w/AICpH_nAWdE.jpg?size=1626x2160&quality=96&sign=7422b01a6feecf8e78398126a02ac618&type=album',
+        thumbnail: 'https://sun9-4.userapi.com/impf/GY49ENKvvM7NbghvPjV1JSkQ-dX8jX5UkKao4w/AICpH_nAWdE.jpg?size=1626x2160&quality=96&sign=7422b01a6feecf8e78398126a02ac618&type=album',
+    },
+    {
         original: 'https://cdna.artstation.com/p/assets/images/images/028/359/562/large/mike-u-annihilation-cover.jpg?1594236723',
         thumbnail: 'https://cdna.artstation.com/p/assets/images/images/028/359/562/large/mike-u-annihilation-cover.jpg?1594236723',
     },
